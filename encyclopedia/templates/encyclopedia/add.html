@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1>Create New Page</h1>
+
+    <div class="form-control-sm">    
+        <div class="col-auto my-1">
+        <form  action="{% url 'encyclopedia:add' %}" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-secondary">
+    </form>
+</div>
+</div>
+
+{% endblock %}
